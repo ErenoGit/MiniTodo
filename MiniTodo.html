@@ -59,7 +59,13 @@ function renderTasks(){
     const el = document.createElement("div");
     el.className = "task";
 
-    el.innerHTML = t + " <button onclick='removeTask("+i+")'>Usuń</button>";
+      const span = document.createElement("span");
+    span.textContent = t;
+    const btn = document.createElement("button");
+    btn.textContent = "Usuń";
+    btn.addEventListener("click", () => removeTask(i));
+    el.appendChild(span);
+    el.appendChild(btn);
 
     container.appendChild(el);
   });
