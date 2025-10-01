@@ -19,9 +19,16 @@
   <h3>Lista zadań</h3>
   <input id="taskInput" placeholder="Nowe zadanie" />
   <button id="addTaskBtn">Dodaj</button>
+  <button id="clearBtn">Wyczyść listę</button>
   <div id="taskList"></div>
 
 <script>
+
+document.getElementById("clearBtn").addEventListener("click", () => {
+  tasks = [];
+  renderTasks();
+});
+
 let counter = 0;
 let tasks = [];
 
