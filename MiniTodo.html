@@ -37,6 +37,11 @@ document.getElementById("clearBtn").addEventListener("click", () => {
 
 let counter = 0;
 let tasks = [];
+const saved = localStorage.getItem("tasks");
+if(saved){
+  tasks = JSON.parse(saved);
+  renderTasks();
+}
 
 document.getElementById("incBtn").addEventListener("click", () => {
   counter++;
@@ -63,6 +68,7 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
 
   renderTasks();
   input.value = "";
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 });
 
 function renderTasks(){
