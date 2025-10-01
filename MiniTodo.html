@@ -43,7 +43,9 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
   const input = document.getElementById("taskInput");
   const text = input.value;
 
-  tasks.push(text);
+  if(text.trim().length > 0){
+  tasks.push(text.trim());
+  }
 
   renderTasks();
   input.value = "";
